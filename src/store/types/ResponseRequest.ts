@@ -1,11 +1,4 @@
-import { ClientDto } from './Client';
 import { UserState } from './UserState';
-
-export interface ResponseCreateClientDto {
-	success: boolean;
-	message: string;
-	data?: ClientDto;
-}
 
 export interface ResponseCreateUserDto {
 	success: boolean;
