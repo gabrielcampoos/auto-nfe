@@ -49,6 +49,8 @@ export const SixthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 						sx={{
 							fontSize: '8px',
 							fontWeight: 700,
+							pt: 2,
+							pb: 2,
 						}}
 					>
 						OBSERVAÇÃO: Não incidência de ISSQN sobre locação de
