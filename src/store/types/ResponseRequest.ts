@@ -1,0 +1,24 @@
+import { ClientDto } from './Client';
+import { UserState } from './UserState';
+
+export interface ResponseCreateClientDto {
+	success: boolean;
+	message: string;
+	data?: ClientDto;
+}
+
+export interface ResponseCreateUserDto {
+	success: boolean;
+	message: string;
+	data?: UserState & { id: string };
+}
+
+export interface ResponseLoginDto {
+	success: boolean;
+	message: string;
+	data?: {
+		id: string;
+		username: string;
+		token: string;
+	};
+}
