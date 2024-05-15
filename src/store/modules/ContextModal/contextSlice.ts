@@ -1,6 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import ContextState from '../../types/ContextState';
 import ContextStateSecondLine from '../../types/ContextState';
 
 const initialState: ContextStateSecondLine = {

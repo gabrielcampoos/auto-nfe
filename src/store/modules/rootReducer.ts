@@ -1,7 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import loadingSlice from './Loading/loadingSlice';
-import ModalId from './ModalId/idSlice';
 import notificationSlice from './Notification/notificationSlice';
 import contextSliceSecondLine from './ContextModal/contextSlice';
 import contextSliceFourthLine from './ContextModalFourthLine/contextSliceFourthLine';
@@ -23,7 +22,6 @@ const rootReducer = combineReducers({
 	contextFourthLine: contextSliceFourthLine,
 	contextFifthLine: contextSliceFifthLine,
 	contextSixthLine: contextSliceSixthLine,
-	idClient: ModalId,
 
 	// modal: modalTarefasSlice,
 });

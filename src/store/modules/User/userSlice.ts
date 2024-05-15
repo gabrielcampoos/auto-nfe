@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { AxiosError } from 'axios';
-import servicoAPI from '../../../configs/services/api';
 import { showNotification } from '../Notification/notificationSlice';
 import serviceApi from '../../../configs/services/api';
 import { ResponseCreateUserDto, ResponseLoginDto, User } from '../../types';
