@@ -15,10 +15,16 @@ const initialState = {
 		id: '',
 		username: '',
 		token: '',
+		count: 1,
 		isLogged: false,
 	},
 	loading: false,
 };
+
+interface UpdateCountDto {
+	username: string;
+	count: number;
+}
 
 export const createUser = createAsyncThunk(
 	'user/create',
@@ -138,6 +144,46 @@ export const getUser = createAsyncThunk(
 		}
 	},
 );
+export const updateCount = createAsyncThunk(
+	'user/updateCount',
+	async (data: UpdateCountDto, { dispatch }) => {
+		try {
+			const response = await serviceApi.put(
+				`/updateCount/${data.username}`,
+				data,
+			);
+
+			const responseApi = response.data as ResponseLoginDto;
+
+			dispatch(
+				showNotification({
+					message: responseApi.message,
+					success: responseApi.success,
+				}),
+			);
+
+			return responseApi;
+		} catch (error) {
+			if (error instanceof AxiosError) {
+				const response = error.response?.data as ResponseLoginDto;
+
+				dispatch(
+					showNotification({
+						message: response.message,
+						success: response.success,
+					}),
+				);
+
+				return response;
+			}
+
+			return {
+				success: false,
+				message: 'Erro inesperado.',
+			};
+		}
+	},
+);
 
 export const userSlice = createSlice({
 	name: 'user',
@@ -150,6 +196,7 @@ export const userSlice = createSlice({
 					id: action.payload.id,
 					username: action.payload.username,
 					token: action.payload.token,
+					count: action.payload.count,
 					isLogged: true,
 				},
 			};
@@ -177,6 +224,7 @@ export const userSlice = createSlice({
 						id: payload.data?.id,
 						username: payload.data.username,
 						token: payload.data.token,
+						count: payload.data.count,
 						isLogged: false,
 					},
 					loading: false,
@@ -217,6 +265,7 @@ export const userSlice = createSlice({
 						id: payload.data.id,
 						username: payload.data.username,
 						token: payload.data.token,
+						count: payload.data.count,
 						isLogged: true,
 					},
 					loading: false,
@@ -243,11 +292,16 @@ export const userSlice = createSlice({
 			const payload = action.payload as ResponseLoginDto;
 
 			if (payload.success && payload.data) {
+				localStorage.setItem(
+					'count',
+					JSON.stringify(payload.data.count),
+				);
 				return {
 					user: {
 						id: payload.data.id,
 						username: payload.data.username,
 						token: payload.data.token,
+						count: payload.data.count,
 						isLogged: true,
 					},
 					loading: false,
@@ -260,6 +314,38 @@ export const userSlice = createSlice({
 		});
 
 		builder.addCase(getUser.rejected, () => {
+			return initialState;
+		});
+
+		builder.addCase(updateCount.pending, (state) => {
+			return {
+				...state,
+				loading: true,
+			};
+		});
+
+		builder.addCase(updateCount.fulfilled, (state, action) => {
+			const payload = action.payload as ResponseLoginDto;
+
+			if (payload.success && payload.data) {
+				return {
+					user: {
+						id: payload.data.id,
+						username: payload.data.username,
+						token: payload.data.token,
+						count: payload.data.count,
+						isLogged: true,
+					},
+					loading: false,
+				};
+			}
+
+			if (!payload.success) {
+				return initialState;
+			}
+		});
+
+		builder.addCase(updateCount.rejected, () => {
 			return initialState;
 		});
 	},

@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { ModalClientFourthLine } from './ModalClient';
-import { TextType } from '../../../../store/types';
 import { useAppDispatch } from '../../../../store/hooks';
 import { showModalFourthLine } from '../../../../store/modules/ContextModalFourthLine/contextSliceFourthLine';
 import { FourthLineSm } from './FourthLineSm';
@@ -239,6 +238,9 @@ export const FourthLine = ({ disabled, setDisabled }: DisabledButton) => {
 						</Container>
 						<Button
 							disabled={disabled}
+							sx={{
+								mt: 3,
+							}}
 							onClick={() => {
 								setDisabled(true);
 								dispatch(

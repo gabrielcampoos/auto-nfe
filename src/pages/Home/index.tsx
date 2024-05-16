@@ -5,7 +5,9 @@ import { FourthLine } from './components/FourthLine';
 import { FifthLine } from './components/FifthLine';
 import { SixthLine } from './components/SixthLine';
 import generatePDF, { Margin, Options } from 'react-to-pdf';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { getUser, updateCount } from '../../store/modules/User/userSlice';
 
 export const Nfe = () => {
 	const theme = useTheme();
@@ -17,6 +19,20 @@ export const Nfe = () => {
 	const [disabledSixthLine, setDisabledSixthLine] = useState(false);
 	const [disabled, setDisabled] = useState(false);
 	const [widthPdf, setWidthPdf] = useState('100%');
+	const [count, setCount] = useState(0);
+
+	const dispatch = useAppDispatch();
+
+	const userLogged = useAppSelector((user) => user.user.user);
+
+	useEffect(() => {
+		if (!localStorage.getItem('count')) {
+			console.log(0);
+		}
+		dispatch(getUser());
+		const number = Number(localStorage.getItem('count'));
+		setCount(number);
+	}, [dispatch]);
 
 	const targetRef = () => document.getElementById('targetRef');
 
@@ -52,6 +68,7 @@ export const Nfe = () => {
 								display: 'flex',
 								justifyContent: 'center',
 								alignItems: 'center',
+								pt: 12,
 							}}
 						>
 							<Container
@@ -66,6 +83,8 @@ export const Nfe = () => {
 								<FirstLine
 									disabledFirstLine={disabledFirstLine}
 									setDisabledFirstLine={setDisabledFirstLine}
+									count={count}
+									setCount={setCount}
 								/>
 								<SecondLine
 									disabledSecondLine={disabledSecondLine}
@@ -85,6 +104,8 @@ export const Nfe = () => {
 								<SixthLine
 									disabled={disabledSixthLine}
 									setDisabled={setDisabledSixthLine}
+									count={count}
+									setCount={setCount}
 								/>
 								<Button
 									onClick={() => {
@@ -119,6 +140,8 @@ export const Nfe = () => {
 							<FirstLine
 								disabledFirstLine={disabledFirstLine}
 								setDisabledFirstLine={setDisabledFirstLine}
+								count={count}
+								setCount={setCount}
 							/>
 							<SecondLine
 								disabledSecondLine={disabledSecondLine}
@@ -136,9 +159,24 @@ export const Nfe = () => {
 							<SixthLine
 								disabled={disabledSixthLine}
 								setDisabled={setDisabledSixthLine}
+								count={count}
+								setCount={setCount}
 							/>
 						</Container>
-						<Button onClick={() => generatePDF(targetRef, options)}>
+						<Button
+							onClick={() => {
+								generatePDF(targetRef, options);
+								setTimeout(() => {
+									setCount(count + 1);
+									dispatch(
+										updateCount({
+											username: userLogged.username,
+											count: count,
+										}),
+									);
+								}, 1000);
+							}}
+						>
 							Download PDF
 						</Button>
 					</Box>

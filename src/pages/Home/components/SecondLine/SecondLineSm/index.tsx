@@ -44,11 +44,7 @@ export const SecondLineSm = ({
 					borderBottom: '1px solid #000',
 				}}
 			>
-				<Grid
-					item
-					xs={12}
-					sm={12}
-					md={12}
+				<Box
 					sx={{
 						width: '100%',
 						display: 'flex',
@@ -64,6 +60,7 @@ export const SecondLineSm = ({
 							justifyContent: 'center',
 							alignItems: 'center',
 							mb: 2,
+							mt: 4,
 						}}
 					>
 						<Typography
@@ -81,7 +78,7 @@ export const SecondLineSm = ({
 						sx={{
 							width: '100%',
 							display: 'flex',
-							justifyContent: 'space-around',
+							justifyContent: 'space-between',
 							alignItems: 'center',
 						}}
 					>
@@ -89,7 +86,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
+								flex: 0.3,
+								textAlign: 'center',
 							}}
 						>
 							Razão Social / Nome Cliente:
@@ -101,7 +100,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
+								flex: 0.3,
+								textAlign: 'center',
 							}}
 						>
 							CNPJ / CPF:
@@ -112,9 +113,9 @@ export const SecondLineSm = ({
 
 					<Box
 						sx={{
-							width: '64%',
+							width: '100%',
 							display: 'flex',
-							justifyContent: 'flex-start',
+							justifyContent: 'space-between',
 							alignItems: 'center',
 							mt: 2,
 							mb: 2,
@@ -124,7 +125,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
+								flex: 1,
+								textAlign: 'center',
 							}}
 						>
 							Endereço:
@@ -136,7 +139,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
+								flex: 1,
+								textAlign: 'center',
 							}}
 						>
 							Bairro:
@@ -148,7 +153,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
+								flex: 0.3,
+								textAlign: 'center',
 							}}
 						>
 							CEP:
@@ -160,7 +167,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
+								flex: 1,
+								textAlign: 'center',
 							}}
 						>
 							UF:
@@ -181,9 +190,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
-								flex: 0.39,
-								textAlign: 'end',
+								fontSize: '10px',
+								flex: 0.78,
+								textAlign: 'center',
 							}}
 						>
 							Cidade:
@@ -195,9 +204,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
-								flex: 0.22,
-								textAlign: 'start',
+								fontSize: '10px',
+								flex: 1,
+								textAlign: 'center',
 							}}
 						>
 							Inscrição Estadual:
@@ -209,9 +218,9 @@ export const SecondLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
-								flex: 0.22,
-								textAlign: 'start',
+								fontSize: '10px',
+								flex: 0.78,
+								textAlign: 'center',
 							}}
 						>
 							Telefone:
@@ -219,7 +228,7 @@ export const SecondLineSm = ({
 							{phone}
 						</Typography>
 					</Box>
-				</Grid>
+				</Box>
 				<Button
 					size="small"
 					disabled={disabledSecondLine}

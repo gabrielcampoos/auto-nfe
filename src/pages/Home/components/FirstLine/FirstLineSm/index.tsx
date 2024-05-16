@@ -7,11 +7,15 @@ import { ModalClientFirstLine } from '../ModalClient';
 interface DisabledButton {
 	disabledFirstLine: boolean;
 	setDisabledFirstLine: React.Dispatch<React.SetStateAction<boolean>>;
+	count: number;
+	setCount: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const FirstLineSm = ({
 	disabledFirstLine,
 	setDisabledFirstLine,
+	count,
+	setCount,
 }: DisabledButton) => {
 	const [name, setName] = useState('');
 	const [socialReason, setSocialReason] = useState('');
@@ -87,16 +91,16 @@ export const FirstLineSm = ({
 								component="h1"
 								variant="h6"
 								sx={{
-									fontSize: '8px',
+									fontSize: '10px',
 								}}
 							>
-								{socialReason}{' '}
+								{socialReason}
 							</Typography>
 							<Typography
 								component="p"
 								variant="subtitle1"
 								sx={{
-									fontSize: '8px',
+									fontSize: '10px',
 								}}
 							>
 								{address}
@@ -107,7 +111,7 @@ export const FirstLineSm = ({
 								component="p"
 								variant="subtitle1"
 								sx={{
-									fontSize: '8px',
+									fontSize: '10px',
 								}}
 							>
 								CNPJ: {cnpj}
@@ -153,17 +157,17 @@ export const FirstLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '12px',
+								fontSize: '10px',
 							}}
 						>
-							N°: 00001
+							N°: 0000{count}
 						</Typography>
 
 						<Typography
 							component="p"
 							variant="subtitle1"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 							}}
 						>
 							Emissão: {`${dataFormatada}`}
@@ -179,7 +183,7 @@ export const FirstLineSm = ({
 						pl: 2,
 						borderRight: '1px solid #000',
 						borderRadius: '0',
-						ml: 0.2,
+						ml: 0.1,
 					}}
 					onClick={() => {
 						setDisabledFirstLine(true);

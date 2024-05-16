@@ -58,7 +58,7 @@ export const FifthLineSm = ({
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								fontWeight: 600,
 							}}
 						>

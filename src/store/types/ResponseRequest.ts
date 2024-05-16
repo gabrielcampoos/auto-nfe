@@ -13,5 +13,6 @@ export interface ResponseLoginDto {
 		id: string;
 		username: string;
 		token: string;
+		count: number;
 	};
 }

@@ -55,7 +55,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '12px',
 							}}
 						>
 							DADOS DA LOCAÇÃO
@@ -78,7 +78,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderTop: '1px solid #000',
 								flex: 1,
 								textAlign: 'center',
@@ -91,7 +91,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderTop: '1px solid #000',
 								borderLeft: '1px solid #000',
 								flex: 1,
@@ -105,7 +105,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderTop: '1px solid #000',
 								borderLeft: '1px solid #000',
 								flex: 1,
@@ -119,7 +119,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderTop: '1px solid #000',
 								borderLeft: '1px solid #000',
 								flex: 1,
@@ -140,7 +140,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderTop: '1px solid #000',
 								borderBottom: '1px solid #000',
 								borderRight: '1px solid #000',
@@ -155,7 +155,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderBottom: '1px solid #000',
 								borderTop: '1px solid #000',
 								flex: 1,
@@ -169,7 +169,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderTop: '1px solid #000',
 								borderBottom: '1px solid #000',
 								borderLeft: '1px solid #000',
@@ -184,7 +184,7 @@ export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
 							component="h1"
 							variant="h6"
 							sx={{
-								fontSize: '8px',
+								fontSize: '10px',
 								borderTop: '1px solid #000',
 								borderBottom: '1px solid #000',
 								borderLeft: '1px solid #000',

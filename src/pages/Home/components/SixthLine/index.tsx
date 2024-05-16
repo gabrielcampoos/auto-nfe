@@ -15,9 +15,16 @@ import { ModalClientSixthLine } from './ModalClient';
 interface DisabledButton {
 	disabled: boolean;
 	setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
+	count: number;
+	setCount: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const SixthLine = ({ disabled, setDisabled }: DisabledButton) => {
+export const SixthLine = ({
+	disabled,
+	setDisabled,
+	count,
+	setCount,
+}: DisabledButton) => {
 	const [value, setValue] = useState('');
 
 	const theme = useTheme();
@@ -32,6 +39,8 @@ export const SixthLine = ({ disabled, setDisabled }: DisabledButton) => {
 					<SixthLineSm
 						disabled={disabled}
 						setDisabled={setDisabled}
+						count={count}
+						setCount={setCount}
 					/>
 				</>
 			)) || (
@@ -284,7 +293,7 @@ export const SixthLine = ({ disabled, setDisabled }: DisabledButton) => {
 										mb: 3,
 									}}
 								>
-									Nº 00001
+									Nº 0000{count}
 								</Typography>
 							</Box>
 						</Box>

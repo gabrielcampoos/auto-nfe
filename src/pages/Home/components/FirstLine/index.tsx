@@ -15,11 +15,15 @@ import { ModalClientFirstLine } from './ModalClient';
 interface DisabledButton {
 	disabledFirstLine: boolean;
 	setDisabledFirstLine: React.Dispatch<React.SetStateAction<boolean>>;
+	count: number;
+	setCount: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const FirstLine = ({
 	disabledFirstLine,
 	setDisabledFirstLine,
+	count,
+	setCount,
 }: DisabledButton) => {
 	const [name, setName] = useState('');
 	const [socialReason, setSocialReason] = useState('');
@@ -48,6 +52,8 @@ export const FirstLine = ({
 					<FirstLineSm
 						disabledFirstLine={disabledFirstLine}
 						setDisabledFirstLine={setDisabledFirstLine}
+						count={count}
+						setCount={setCount}
 					/>
 				</>
 			)) || (
@@ -173,7 +179,7 @@ export const FirstLine = ({
 										fontSize: '14px',
 									}}
 								>
-									N°: 00001
+									N°: 0000{count}
 								</Typography>
 
 								<Typography
