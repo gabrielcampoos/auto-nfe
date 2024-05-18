@@ -112,6 +112,14 @@ export const Nfe = () => {
 										setWidthPdf('2480px');
 										setTimeout(() => {
 											generatePDF(targetRef, options);
+											setCount(count + 1);
+											dispatch(
+												updateCount({
+													username:
+														userLogged.username,
+													count: count,
+												}),
+											);
 										}, 1000);
 									}}
 								>
