@@ -26,12 +26,12 @@ export const Nfe = () => {
 	const userLogged = useAppSelector((user) => user.user.user);
 
 	useEffect(() => {
+		dispatch(getUser());
+		const number = Number(localStorage.getItem('count'));
+		setCount(number + 1);
 		if (!localStorage.getItem('count')) {
 			console.log(0);
 		}
-		dispatch(getUser());
-		const number = Number(localStorage.getItem('count'));
-		setCount(number);
 	}, [dispatch]);
 
 	const targetRef = () => document.getElementById('targetRef');

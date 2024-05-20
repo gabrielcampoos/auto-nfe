@@ -259,6 +259,10 @@ export const userSlice = createSlice({
 
 			if (payload.success && payload.data) {
 				localStorage.setItem('userLogged', payload.data.token);
+				localStorage.setItem(
+					'count',
+					JSON.stringify(payload.data.count),
+				);
 
 				return {
 					user: {
