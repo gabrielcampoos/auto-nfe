@@ -13,45 +13,47 @@ import { useAppDispatch, useAppSelector } from '../../../../../store/hooks';
 import { hideModal } from '../../../../../store/modules/ContextModal/contextSlice';
 
 interface ClientProps {
-	name: string;
-	setName: React.Dispatch<React.SetStateAction<string>>;
-	cpf: string;
-	setCpf: React.Dispatch<React.SetStateAction<string>>;
-	address: string;
-	setAddress: React.Dispatch<React.SetStateAction<string>>;
-	district: string;
-	setDistrict: React.Dispatch<React.SetStateAction<string>>;
-	zipCode: string;
-	setZipCode: React.Dispatch<React.SetStateAction<string>>;
-	uf: string;
-	setUf: React.Dispatch<React.SetStateAction<string>>;
-	city: string;
-	setCity: React.Dispatch<React.SetStateAction<string>>;
-	municipalRegistration: string;
-	setMunicipalRegistration: React.Dispatch<React.SetStateAction<string>>;
-	phone: string;
-	setPhone: React.Dispatch<React.SetStateAction<string>>;
+	nameClient: string;
+	setNameClient: React.Dispatch<React.SetStateAction<string>>;
+	cpfClient: string;
+	setCpfClient: React.Dispatch<React.SetStateAction<string>>;
+	addressClient: string;
+	setAddressClient: React.Dispatch<React.SetStateAction<string>>;
+	districtClient: string;
+	setDistrictClient: React.Dispatch<React.SetStateAction<string>>;
+	zipCodeClient: string;
+	setZipCodeClient: React.Dispatch<React.SetStateAction<string>>;
+	ufClient: string;
+	setUfClient: React.Dispatch<React.SetStateAction<string>>;
+	cityClient: string;
+	setCityClient: React.Dispatch<React.SetStateAction<string>>;
+	municipalRegistrationClient: string;
+	setMunicipalRegistrationClient: React.Dispatch<
+		React.SetStateAction<string>
+	>;
+	phoneClient: string;
+	setPhoneClient: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ModalClientSecondLine = ({
-	name,
-	setName,
-	cpf,
-	setCpf,
-	address,
-	setAddress,
-	district,
-	setDistrict,
-	zipCode,
-	setZipCode,
-	uf,
-	setUf,
-	city,
-	setCity,
-	municipalRegistration,
-	setMunicipalRegistration,
-	phone,
-	setPhone,
+	nameClient,
+	setNameClient,
+	cpfClient,
+	setCpfClient,
+	addressClient,
+	setAddressClient,
+	districtClient,
+	setDistrictClient,
+	zipCodeClient,
+	setZipCodeClient,
+	ufClient,
+	setUfClient,
+	cityClient,
+	setCityClient,
+	municipalRegistrationClient,
+	setMunicipalRegistrationClient,
+	phoneClient,
+	setPhoneClient,
 }: ClientProps) => {
 	const dispatch = useAppDispatch();
 	const { context, isOpen } = useAppSelector(
@@ -121,8 +123,10 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setName(ev.target.value)}
-								value={name}
+								onChange={(ev) =>
+									setNameClient(ev.target.value)
+								}
+								value={nameClient}
 								multiline
 								minRows={3}
 							/>
@@ -136,8 +140,8 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setCpf(ev.target.value)}
-								value={cpf}
+								onChange={(ev) => setCpfClient(ev.target.value)}
+								value={cpfClient}
 								multiline
 								minRows={3}
 							/>
@@ -151,8 +155,10 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setAddress(ev.target.value)}
-								value={address}
+								onChange={(ev) =>
+									setAddressClient(ev.target.value)
+								}
+								value={addressClient}
 								multiline
 								minRows={3}
 							/>
@@ -166,8 +172,10 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setDistrict(ev.target.value)}
-								value={district}
+								onChange={(ev) =>
+									setDistrictClient(ev.target.value)
+								}
+								value={districtClient}
 								multiline
 								minRows={3}
 							/>
@@ -181,8 +189,10 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setZipCode(ev.target.value)}
-								value={zipCode}
+								onChange={(ev) =>
+									setZipCodeClient(ev.target.value)
+								}
+								value={zipCodeClient}
 								multiline
 								minRows={3}
 							/>
@@ -196,8 +206,8 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setUf(ev.target.value)}
-								value={uf}
+								onChange={(ev) => setUfClient(ev.target.value)}
+								value={ufClient}
 								multiline
 								minRows={3}
 							/>
@@ -211,8 +221,10 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setCity(ev.target.value)}
-								value={city}
+								onChange={(ev) =>
+									setCityClient(ev.target.value)
+								}
+								value={cityClient}
 								multiline
 								minRows={3}
 							/>
@@ -227,9 +239,11 @@ export const ModalClientSecondLine = ({
 								fullWidth
 								variant="filled"
 								onChange={(ev) =>
-									setMunicipalRegistration(ev.target.value)
+									setMunicipalRegistrationClient(
+										ev.target.value,
+									)
 								}
-								value={municipalRegistration}
+								value={municipalRegistrationClient}
 								multiline
 								minRows={3}
 							/>
@@ -242,8 +256,10 @@ export const ModalClientSecondLine = ({
 								type="text"
 								fullWidth
 								variant="filled"
-								onChange={(ev) => setPhone(ev.target.value)}
-								value={phone}
+								onChange={(ev) =>
+									setPhoneClient(ev.target.value)
+								}
+								value={phoneClient}
 								multiline
 								minRows={3}
 							/>

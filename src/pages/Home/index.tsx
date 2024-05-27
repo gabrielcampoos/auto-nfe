@@ -20,6 +20,23 @@ export const Nfe = () => {
 	const [disabled, setDisabled] = useState(false);
 	const [widthPdf, setWidthPdf] = useState('100%');
 	const [count, setCount] = useState(0);
+	const [name, setName] = useState('');
+	const [socialReason, setSocialReason] = useState('');
+	const [address, setAddress] = useState('');
+	const [zipCode, setZipCode] = useState('');
+	const [cnpj, setCnpj] = useState('');
+	const [number, setNumber] = useState('');
+
+	const [nameClient, setNameClient] = useState('');
+	const [cpfClient, setCpfClient] = useState('');
+	const [addressClient, setAddressClient] = useState('');
+	const [districtClient, setDistrictClient] = useState('');
+	const [zipCodeClient, setZipCodeClient] = useState('');
+	const [ufClient, setUfClient] = useState('');
+	const [cityClient, setCityClient] = useState('');
+	const [municipalRegistrationClient, setMunicipalRegistrationClient] =
+		useState('');
+	const [phoneClient, setPhoneClient] = useState('');
 
 	const dispatch = useAppDispatch();
 
@@ -85,12 +102,46 @@ export const Nfe = () => {
 									setDisabledFirstLine={setDisabledFirstLine}
 									count={count}
 									setCount={setCount}
+									name={name}
+									setName={setName}
+									socialReason={socialReason}
+									setSocialReason={setSocialReason}
+									address={address}
+									setAddress={setAddress}
+									zipCode={zipCode}
+									setZipCode={setZipCode}
+									cnpj={cnpj}
+									setCnpj={setCnpj}
+									number={number}
+									setNumber={setNumber}
 								/>
 								<SecondLine
 									disabledSecondLine={disabledSecondLine}
 									setDisabledSecondLine={
 										setDisabledSecondLine
 									}
+									nameClient={nameClient}
+									cpfClient={cpfClient}
+									addressClient={addressClient}
+									districtClient={districtClient}
+									zipCodeClient={zipCodeClient}
+									ufClient={ufClient}
+									cityClient={cityClient}
+									municipalRegistrationClient={
+										municipalRegistrationClient
+									}
+									phoneClient={phoneClient}
+									setNameClient={setNameClient}
+									setCpfClient={setCpfClient}
+									setAddressClient={setAddressClient}
+									setDistrictClient={setDistrictClient}
+									setZipCodeClient={setZipCodeClient}
+									setUfClient={setUfClient}
+									setCityClient={setCityClient}
+									setMunicipalRegistrationClient={
+										setMunicipalRegistrationClient
+									}
+									setPhoneClient={setPhoneClient}
 								/>
 
 								<FourthLine
@@ -107,24 +158,37 @@ export const Nfe = () => {
 									count={count}
 									setCount={setCount}
 								/>
-								<Button
-									onClick={() => {
-										setWidthPdf('2480px');
-										setTimeout(() => {
-											generatePDF(targetRef, options);
-											setCount(count + 1);
-											dispatch(
-												updateCount({
-													username:
-														userLogged.username,
-													count: count,
-												}),
-											);
-										}, 1000);
+								<Box
+									sx={{
+										width: '100%',
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
 									}}
 								>
-									Download PDF
-								</Button>
+									<Button
+										onClick={() => {
+											setWidthPdf('2480px');
+											setTimeout(() => {
+												generatePDF(targetRef, options);
+												setCount(count + 1);
+												dispatch(
+													updateCount({
+														username:
+															userLogged.username,
+														count: count,
+													}),
+												);
+											}, 1000);
+										}}
+									>
+										Download PDF
+									</Button>
+
+									<Button href="https://auto-generate.vercel.app">
+										Gerar mensalmente
+									</Button>
+								</Box>
 							</Container>
 						</Box>
 					</Container>
@@ -150,10 +214,44 @@ export const Nfe = () => {
 								setDisabledFirstLine={setDisabledFirstLine}
 								count={count}
 								setCount={setCount}
+								name={name}
+								setName={setName}
+								socialReason={socialReason}
+								setSocialReason={setSocialReason}
+								address={address}
+								setAddress={setAddress}
+								zipCode={zipCode}
+								setZipCode={setZipCode}
+								cnpj={cnpj}
+								setCnpj={setCnpj}
+								number={number}
+								setNumber={setNumber}
 							/>
 							<SecondLine
 								disabledSecondLine={disabledSecondLine}
 								setDisabledSecondLine={setDisabledSecondLine}
+								nameClient={nameClient}
+								cpfClient={cpfClient}
+								addressClient={addressClient}
+								districtClient={districtClient}
+								zipCodeClient={zipCodeClient}
+								ufClient={ufClient}
+								cityClient={cityClient}
+								municipalRegistrationClient={
+									municipalRegistrationClient
+								}
+								phoneClient={phoneClient}
+								setNameClient={setNameClient}
+								setCpfClient={setCpfClient}
+								setAddressClient={setAddressClient}
+								setDistrictClient={setDistrictClient}
+								setZipCodeClient={setZipCodeClient}
+								setUfClient={setUfClient}
+								setCityClient={setCityClient}
+								setMunicipalRegistrationClient={
+									setMunicipalRegistrationClient
+								}
+								setPhoneClient={setPhoneClient}
 							/>
 
 							<FourthLine
@@ -171,22 +269,90 @@ export const Nfe = () => {
 								setCount={setCount}
 							/>
 						</Container>
-						<Button
-							onClick={() => {
-								generatePDF(targetRef, options);
-								setTimeout(() => {
-									setCount(count + 1);
-									dispatch(
-										updateCount({
-											username: userLogged.username,
-											count: count,
-										}),
-									);
-								}, 1000);
+						<Box
+							sx={{
+								width: '100%',
+								display: 'flex',
+								justifyContent: 'space-between',
+								alignItems: 'center',
 							}}
 						>
-							Download PDF
-						</Button>
+							<Button
+								onClick={() => {
+									generatePDF(targetRef, options);
+									setTimeout(() => {
+										setCount(count + 1);
+										dispatch(
+											updateCount({
+												username: userLogged.username,
+												count: count,
+											}),
+										);
+									}, 1000);
+								}}
+							>
+								Download PDF
+							</Button>
+							<Button
+								href="https://auto-generate.vercel.app"
+								onClick={() => {
+									localStorage.setItem('dataCompany', name);
+									localStorage.setItem(
+										'dataCompany',
+										socialReason,
+									);
+									localStorage.setItem(
+										'dataCompany',
+										address,
+									);
+									localStorage.setItem(
+										'dataCompany',
+										zipCode,
+									);
+									localStorage.setItem('dataCompany', cnpj);
+									localStorage.setItem('dataCompany', number);
+
+									localStorage.setItem(
+										'dataClient',
+										nameClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										cpfClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										addressClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										districtClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										zipCodeClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										ufClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										cityClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										municipalRegistrationClient,
+									);
+									localStorage.setItem(
+										'dataClient',
+										phoneClient,
+									);
+								}}
+							>
+								Gerar mensalmente
+							</Button>
+						</Box>
 					</Box>
 				</>
 			)}
