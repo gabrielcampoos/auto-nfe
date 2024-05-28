@@ -50,6 +50,14 @@ export const FourthLine = ({
 					<FourthLineSm
 						disabled={disabled}
 						setDisabled={setDisabled}
+						item={item}
+						setItem={setItem}
+						text={text}
+						setText={setText}
+						address={address}
+						setAddress={setAddress}
+						value={value}
+						setValue={setValue}
 					/>
 				</>
 			)) || (

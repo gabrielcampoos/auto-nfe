@@ -216,7 +216,53 @@ export const Nfe = () => {
 										Download PDF
 									</Button>
 
-									<Button href="https://auto-generate.vercel.app">
+									<Button
+										href={url}
+										onClick={() => {
+											const nfe = {
+												nameClient: nameClient,
+												cpfClient: cpfClient,
+												addressClient: addressClient,
+												districtClient: districtClient,
+												zipCodeClient: zipCodeClient,
+												ufClient: ufClient,
+												cityClient: cityClient,
+												municipalRegistrationClient:
+													municipalRegistrationClient,
+												phoneClient: phoneClient,
+												nameCompany: name,
+												socialReasonCompany:
+													socialReason,
+												addressCompany: address,
+												zipCodeCompany: zipCode,
+												cnpjCompany: cnpj,
+												numberCompany: number,
+												itemInfo: item,
+												textInfo: text,
+												addressInfo: addressInfo,
+												valueInfo: valueInfo,
+												formOfPaymentPayment:
+													formOfPayment,
+												valuePayment: value,
+												maturityPayment: maturity,
+												valueTotal: valueTotal,
+											};
+
+											externalApi
+												.post('/nfe', nfe)
+												.then((response) => {
+													if (response.data) {
+														setUrl(
+															'https://auto-generate.vercel.app',
+														);
+														window.location.href =
+															'https://auto-generate.vercel.app';
+													} else {
+														console.log('Erro');
+													}
+												});
+										}}
+									>
 										Gerar mensalmente
 									</Button>
 								</Box>

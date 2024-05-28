@@ -14,22 +14,50 @@ import { useState } from 'react';
 interface DisabledButton {
 	disabledSecondLine: boolean;
 	setDisabledSecondLine: React.Dispatch<React.SetStateAction<boolean>>;
+	nameClient: string;
+	setNameClient: React.Dispatch<React.SetStateAction<string>>;
+	cpfClient: string;
+	setCpfClient: React.Dispatch<React.SetStateAction<string>>;
+	addressClient: string;
+	setAddressClient: React.Dispatch<React.SetStateAction<string>>;
+	districtClient: string;
+	setDistrictClient: React.Dispatch<React.SetStateAction<string>>;
+	zipCodeClient: string;
+	setZipCodeClient: React.Dispatch<React.SetStateAction<string>>;
+	ufClient: string;
+	setUfClient: React.Dispatch<React.SetStateAction<string>>;
+	cityClient: string;
+	setCityClient: React.Dispatch<React.SetStateAction<string>>;
+	municipalRegistrationClient: string;
+	setMunicipalRegistrationClient: React.Dispatch<
+		React.SetStateAction<string>
+	>;
+	phoneClient: string;
+	setPhoneClient: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const SecondLineSm = ({
 	disabledSecondLine,
 	setDisabledSecondLine,
+	nameClient,
+	setNameClient,
+	cpfClient,
+	setCpfClient,
+	addressClient,
+	setAddressClient,
+	districtClient,
+	setDistrictClient,
+	zipCodeClient,
+	setZipCodeClient,
+	ufClient,
+	setUfClient,
+	cityClient,
+	setCityClient,
+	municipalRegistrationClient,
+	setMunicipalRegistrationClient,
+	phoneClient,
+	setPhoneClient,
 }: DisabledButton) => {
-	const [name, setName] = useState('');
-	const [cpf, setCpf] = useState('');
-	const [address, setAddress] = useState('');
-	const [district, setDistrict] = useState('');
-	const [zipCode, setZipCode] = useState('');
-	const [uf, setUf] = useState('');
-	const [city, setCity] = useState('');
-	const [municipalRegistration, setMunicipalRegistration] = useState('');
-	const [phone, setPhone] = useState('');
-
 	const dispatch = useAppDispatch();
 
 	return (
@@ -93,7 +121,7 @@ export const SecondLineSm = ({
 						>
 							Razão Social / Nome Cliente:
 							<br />
-							{name}
+							{nameClient}
 						</Typography>
 
 						<Typography
@@ -107,7 +135,7 @@ export const SecondLineSm = ({
 						>
 							CNPJ / CPF:
 							<br />
-							{cpf}
+							{cpfClient}
 						</Typography>
 					</Box>
 
@@ -132,7 +160,7 @@ export const SecondLineSm = ({
 						>
 							Endereço:
 							<br />
-							{address}
+							{addressClient}
 						</Typography>
 
 						<Typography
@@ -146,7 +174,7 @@ export const SecondLineSm = ({
 						>
 							Bairro:
 							<br />
-							{district}
+							{districtClient}
 						</Typography>
 
 						<Typography
@@ -160,7 +188,7 @@ export const SecondLineSm = ({
 						>
 							CEP:
 							<br />
-							{zipCode}
+							{zipCodeClient}
 						</Typography>
 
 						<Typography
@@ -174,7 +202,7 @@ export const SecondLineSm = ({
 						>
 							UF:
 							<br />
-							{uf}
+							{ufClient}
 						</Typography>
 					</Box>
 
@@ -197,7 +225,7 @@ export const SecondLineSm = ({
 						>
 							Cidade:
 							<br />
-							{city}
+							{cityClient}
 						</Typography>
 
 						<Typography
@@ -211,7 +239,7 @@ export const SecondLineSm = ({
 						>
 							Inscrição Estadual:
 							<br />
-							{municipalRegistration}
+							{municipalRegistrationClient}
 						</Typography>
 
 						<Typography
@@ -225,7 +253,7 @@ export const SecondLineSm = ({
 						>
 							Telefone:
 							<br />
-							{phone}
+							{phoneClient}
 						</Typography>
 					</Box>
 				</Box>
@@ -241,24 +269,24 @@ export const SecondLineSm = ({
 				</Button>
 			</Grid>
 			<ModalClientSecondLine
-				name={name}
-				setName={setName}
-				cpf={cpf}
-				setCpf={setCpf}
-				address={address}
-				setAddress={setAddress}
-				district={district}
-				setDistrict={setDistrict}
-				zipCode={zipCode}
-				setZipCode={setZipCode}
-				uf={uf}
-				setUf={setUf}
-				city={city}
-				setCity={setCity}
-				municipalRegistration={municipalRegistration}
-				setMunicipalRegistration={setMunicipalRegistration}
-				phone={phone}
-				setPhone={setPhone}
+				nameClient={nameClient}
+				setNameClient={setNameClient}
+				cpfClient={cpfClient}
+				setCpfClient={setCpfClient}
+				addressClient={addressClient}
+				setAddressClient={setAddressClient}
+				districtClient={districtClient}
+				setDistrictClient={setDistrictClient}
+				zipCodeClient={zipCodeClient}
+				setZipCodeClient={setZipCodeClient}
+				ufClient={ufClient}
+				setUfClient={setUfClient}
+				cityClient={cityClient}
+				setCityClient={setCityClient}
+				municipalRegistrationClient={municipalRegistrationClient}
+				setMunicipalRegistrationClient={setMunicipalRegistrationClient}
+				phoneClient={phoneClient}
+				setPhoneClient={setPhoneClient}
 			/>
 		</>
 	);

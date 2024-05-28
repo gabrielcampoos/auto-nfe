@@ -46,6 +46,12 @@ export const FifthLine = ({
 					<FifthLineSm
 						disabledFifthLine={disabledFifthLine}
 						setDisabledFifthLine={setDisabledFifthLine}
+						formOfPayment={formOfPayment}
+						setFormOfPayment={setFormOfPayment}
+						value={value}
+						setValue={setValue}
+						maturity={maturity}
+						setMaturity={setMaturity}
 					/>
 				</>
 			)) || (

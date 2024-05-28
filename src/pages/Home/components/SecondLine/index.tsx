@@ -71,6 +71,28 @@ export const SecondLine = ({
 					<SecondLineSm
 						disabledSecondLine={disabledSecondLine}
 						setDisabledSecondLine={setDisabledSecondLine}
+						nameClient={nameClient}
+						setNameClient={setNameClient}
+						cpfClient={cpfClient}
+						setCpfClient={setCpfClient}
+						addressClient={addressClient}
+						setAddressClient={setAddressClient}
+						districtClient={districtClient}
+						setDistrictClient={setDistrictClient}
+						zipCodeClient={zipCodeClient}
+						setZipCodeClient={setZipCodeClient}
+						ufClient={ufClient}
+						setUfClient={setUfClient}
+						cityClient={cityClient}
+						setCityClient={setCityClient}
+						municipalRegistrationClient={
+							municipalRegistrationClient
+						}
+						setMunicipalRegistrationClient={
+							setMunicipalRegistrationClient
+						}
+						phoneClient={phoneClient}
+						setPhoneClient={setPhoneClient}
 					/>
 				</>
 			)) || (

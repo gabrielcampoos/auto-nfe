@@ -43,6 +43,8 @@ export const SixthLine = ({
 						setDisabled={setDisabled}
 						count={count}
 						setCount={setCount}
+						valueTotal={valueTotal}
+						setValueTotal={setValueTotal}
 					/>
 				</>
 			)) || (
