@@ -17,6 +17,8 @@ interface DisabledButton {
 	setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
 	count: number;
 	setCount: React.Dispatch<React.SetStateAction<number>>;
+	valueTotal: string;
+	setValueTotal: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const SixthLine = ({
@@ -24,9 +26,9 @@ export const SixthLine = ({
 	setDisabled,
 	count,
 	setCount,
+	valueTotal,
+	setValueTotal,
 }: DisabledButton) => {
-	const [value, setValue] = useState('');
-
 	const theme = useTheme();
 	const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -133,7 +135,7 @@ export const SixthLine = ({
 										flex: 0.4,
 									}}
 								>
-									Valor Total da Fatura: R$ {value}
+									Valor Total da Fatura: R$ {valueTotal}
 								</Typography>
 							</Box>
 						</Box>
@@ -298,7 +300,10 @@ export const SixthLine = ({
 							</Box>
 						</Box>
 					</Grid>
-					<ModalClientSixthLine value={value} setValue={setValue} />
+					<ModalClientSixthLine
+						value={valueTotal}
+						setValue={setValueTotal}
+					/>
 				</>
 			)}
 		</>
