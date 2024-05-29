@@ -7,6 +7,18 @@ import { ModalClientFirstLine } from '../ModalClient';
 interface DisabledButton {
 	disabledFirstLine: boolean;
 	setDisabledFirstLine: React.Dispatch<React.SetStateAction<boolean>>;
+	name: string;
+	setName: React.Dispatch<React.SetStateAction<string>>;
+	socialReason: string;
+	setSocialReason: React.Dispatch<React.SetStateAction<string>>;
+	address: string;
+	setAddress: React.Dispatch<React.SetStateAction<string>>;
+	zipCode: string;
+	setZipCode: React.Dispatch<React.SetStateAction<string>>;
+	cnpj: string;
+	setCnpj: React.Dispatch<React.SetStateAction<string>>;
+	number: string;
+	setNumber: React.Dispatch<React.SetStateAction<string>>;
 	count: number;
 	setCount: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -16,14 +28,19 @@ export const FirstLineSm = ({
 	setDisabledFirstLine,
 	count,
 	setCount,
+	name,
+	setName,
+	socialReason,
+	setSocialReason,
+	address,
+	setAddress,
+	zipCode,
+	setZipCode,
+	cnpj,
+	setCnpj,
+	number,
+	setNumber,
 }: DisabledButton) => {
-	const [name, setName] = useState('');
-	const [socialReason, setSocialReason] = useState('');
-	const [address, setAddress] = useState('');
-	const [zipCode, setZipCode] = useState('');
-	const [cnpj, setCnpj] = useState('');
-	const [number, setNumber] = useState('');
-
 	const dispatch = useAppDispatch();
 
 	const newData = new Date();

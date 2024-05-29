@@ -16,16 +16,30 @@ import { FourthLineSm } from './FourthLineSm';
 interface DisabledButton {
 	disabled: boolean;
 	setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
+	item: number;
+	setItem: React.Dispatch<React.SetStateAction<number>>;
+	text: string;
+	setText: React.Dispatch<React.SetStateAction<string>>;
+	address: string;
+	setAddress: React.Dispatch<React.SetStateAction<string>>;
+	value: number;
+	setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const FourthLine = ({ disabled, setDisabled }: DisabledButton) => {
+export const FourthLine = ({
+	disabled,
+	setDisabled,
+	item,
+	setItem,
+	text,
+	setText,
+	address,
+	setAddress,
+	value,
+	setValue,
+}: DisabledButton) => {
 	const theme = useTheme();
 	const smDown = useMediaQuery(theme.breakpoints.down('sm'));
-
-	const [item, setItem] = useState(0);
-	const [text, setText] = useState('');
-	const [address, setAddress] = useState('');
-	const [value, setValue] = useState(0);
 
 	const dispatch = useAppDispatch();
 
@@ -36,6 +50,14 @@ export const FourthLine = ({ disabled, setDisabled }: DisabledButton) => {
 					<FourthLineSm
 						disabled={disabled}
 						setDisabled={setDisabled}
+						item={item}
+						setItem={setItem}
+						text={text}
+						setText={setText}
+						address={address}
+						setAddress={setAddress}
+						value={value}
+						setValue={setValue}
 					/>
 				</>
 			)) || (

@@ -8,14 +8,28 @@ import { showModalFourthLine } from '../../../../../store/modules/ContextModalFo
 interface DisabledButton {
 	disabled: boolean;
 	setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
+	item: number;
+	setItem: React.Dispatch<React.SetStateAction<number>>;
+	text: string;
+	setText: React.Dispatch<React.SetStateAction<string>>;
+	address: string;
+	setAddress: React.Dispatch<React.SetStateAction<string>>;
+	value: number;
+	setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const FourthLineSm = ({ disabled, setDisabled }: DisabledButton) => {
-	const [item, setItem] = useState(0);
-	const [text, setText] = useState('');
-	const [address, setAddress] = useState('');
-	const [value, setValue] = useState(0);
-
+export const FourthLineSm = ({
+	disabled,
+	setDisabled,
+	item,
+	setItem,
+	text,
+	setText,
+	address,
+	setAddress,
+	value,
+	setValue,
+}: DisabledButton) => {
 	const dispatch = useAppDispatch();
 
 	return (

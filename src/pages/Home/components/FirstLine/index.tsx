@@ -71,6 +71,18 @@ export const FirstLine = ({
 						setDisabledFirstLine={setDisabledFirstLine}
 						count={count}
 						setCount={setCount}
+						name={name}
+						setName={setName}
+						socialReason={socialReason}
+						setSocialReason={setSocialReason}
+						address={address}
+						setAddress={setAddress}
+						zipCode={zipCode}
+						setZipCode={setZipCode}
+						cnpj={cnpj}
+						setCnpj={setCnpj}
+						number={number}
+						setNumber={setNumber}
 					/>
 				</>
 			)) || (

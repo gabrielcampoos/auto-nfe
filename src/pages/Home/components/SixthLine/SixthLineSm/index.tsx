@@ -9,6 +9,8 @@ interface DisabledButton {
 	setDisabled: React.Dispatch<React.SetStateAction<boolean>>;
 	count: number;
 	setCount: React.Dispatch<React.SetStateAction<number>>;
+	valueTotal: string;
+	setValueTotal: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const SixthLineSm = ({
@@ -16,6 +18,8 @@ export const SixthLineSm = ({
 	setDisabled,
 	count,
 	setCount,
+	valueTotal,
+	setValueTotal,
 }: DisabledButton) => {
 	const [value, setValue] = useState('');
 

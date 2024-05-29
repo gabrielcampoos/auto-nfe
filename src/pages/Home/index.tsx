@@ -8,6 +8,8 @@ import generatePDF, { Margin, Options } from 'react-to-pdf';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getUser, updateCount } from '../../store/modules/User/userSlice';
+import serviceApi from '../../configs/services/api';
+import externalApi from '../../configs/services/external-api';
 
 export const Nfe = () => {
 	const theme = useTheme();
@@ -37,6 +39,19 @@ export const Nfe = () => {
 	const [municipalRegistrationClient, setMunicipalRegistrationClient] =
 		useState('');
 	const [phoneClient, setPhoneClient] = useState('');
+
+	const [item, setItem] = useState(0);
+	const [text, setText] = useState('');
+	const [addressInfo, setAddressInfo] = useState('');
+	const [valueInfo, setValueInfo] = useState(0);
+
+	const [formOfPayment, setFormOfPayment] = useState('');
+	const [value, setValue] = useState('');
+	const [maturity, setMaturity] = useState('');
+
+	const [valueTotal, setValueTotal] = useState('');
+
+	const [url, setUrl] = useState('');
 
 	const dispatch = useAppDispatch();
 
@@ -147,16 +162,32 @@ export const Nfe = () => {
 								<FourthLine
 									disabled={disabled}
 									setDisabled={setDisabled}
+									item={item}
+									setItem={setItem}
+									text={text}
+									setText={setText}
+									address={addressInfo}
+									setAddress={setAddressInfo}
+									value={valueInfo}
+									setValue={setValueInfo}
 								/>
 								<FifthLine
 									disabledFifthLine={disabledFifthLine}
 									setDisabledFifthLine={setDisabledFifhtLine}
+									formOfPayment={formOfPayment}
+									setFormOfPayment={setFormOfPayment}
+									value={value}
+									setValue={setValue}
+									maturity={maturity}
+									setMaturity={setMaturity}
 								/>
 								<SixthLine
 									disabled={disabledSixthLine}
 									setDisabled={setDisabledSixthLine}
 									count={count}
 									setCount={setCount}
+									valueTotal={valueTotal}
+									setValueTotal={setValueTotal}
 								/>
 								<Box
 									sx={{
@@ -185,7 +216,53 @@ export const Nfe = () => {
 										Download PDF
 									</Button>
 
-									<Button href="https://auto-generate.vercel.app">
+									<Button
+										href={url}
+										onClick={() => {
+											const nfe = {
+												nameClient: nameClient,
+												cpfClient: cpfClient,
+												addressClient: addressClient,
+												districtClient: districtClient,
+												zipCodeClient: zipCodeClient,
+												ufClient: ufClient,
+												cityClient: cityClient,
+												municipalRegistrationClient:
+													municipalRegistrationClient,
+												phoneClient: phoneClient,
+												nameCompany: name,
+												socialReasonCompany:
+													socialReason,
+												addressCompany: address,
+												zipCodeCompany: zipCode,
+												cnpjCompany: cnpj,
+												numberCompany: number,
+												itemInfo: item,
+												textInfo: text,
+												addressInfo: addressInfo,
+												valueInfo: valueInfo,
+												formOfPaymentPayment:
+													formOfPayment,
+												valuePayment: value,
+												maturityPayment: maturity,
+												valueTotal: valueTotal,
+											};
+
+											externalApi
+												.post('/nfe', nfe)
+												.then((response) => {
+													if (response.data) {
+														setUrl(
+															'https://auto-generate.vercel.app',
+														);
+														window.location.href =
+															'https://auto-generate.vercel.app';
+													} else {
+														console.log('Erro');
+													}
+												});
+										}}
+									>
 										Gerar mensalmente
 									</Button>
 								</Box>
@@ -257,16 +334,32 @@ export const Nfe = () => {
 							<FourthLine
 								disabled={disabled}
 								setDisabled={setDisabled}
+								item={item}
+								setItem={setItem}
+								text={text}
+								setText={setText}
+								address={addressInfo}
+								setAddress={setAddressInfo}
+								value={valueInfo}
+								setValue={setValueInfo}
 							/>
 							<FifthLine
 								disabledFifthLine={disabledFifthLine}
 								setDisabledFifthLine={setDisabledFifhtLine}
+								formOfPayment={formOfPayment}
+								setFormOfPayment={setFormOfPayment}
+								value={value}
+								setValue={setValue}
+								maturity={maturity}
+								setMaturity={setMaturity}
 							/>
 							<SixthLine
 								disabled={disabledSixthLine}
 								setDisabled={setDisabledSixthLine}
 								count={count}
 								setCount={setCount}
+								valueTotal={valueTotal}
+								setValueTotal={setValueTotal}
 							/>
 						</Container>
 						<Box
@@ -294,60 +387,129 @@ export const Nfe = () => {
 								Download PDF
 							</Button>
 							<Button
-								href="https://auto-generate.vercel.app"
+								href={url}
 								onClick={() => {
-									localStorage.setItem('dataCompany', name);
-									localStorage.setItem(
-										'dataCompany',
-										socialReason,
-									);
-									localStorage.setItem(
-										'dataCompany',
-										address,
-									);
-									localStorage.setItem(
-										'dataCompany',
-										zipCode,
-									);
-									localStorage.setItem('dataCompany', cnpj);
-									localStorage.setItem('dataCompany', number);
+									const nfe = {
+										nameClient: nameClient,
+										cpfClient: cpfClient,
+										addressClient: addressClient,
+										districtClient: districtClient,
+										zipCodeClient: zipCodeClient,
+										ufClient: ufClient,
+										cityClient: cityClient,
+										municipalRegistrationClient:
+											municipalRegistrationClient,
+										phoneClient: phoneClient,
+										nameCompany: name,
+										socialReasonCompany: socialReason,
+										addressCompany: address,
+										zipCodeCompany: zipCode,
+										cnpjCompany: cnpj,
+										numberCompany: number,
+										itemInfo: item,
+										textInfo: text,
+										addressInfo: addressInfo,
+										valueInfo: valueInfo,
+										formOfPaymentPayment: formOfPayment,
+										valuePayment: value,
+										maturityPayment: maturity,
+										valueTotal: valueTotal,
+									};
 
-									localStorage.setItem(
-										'dataClient',
-										nameClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										cpfClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										addressClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										districtClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										zipCodeClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										ufClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										cityClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										municipalRegistrationClient,
-									);
-									localStorage.setItem(
-										'dataClient',
-										phoneClient,
-									);
+									externalApi
+										.post('/nfe', nfe)
+										.then((response) => {
+											if (response.data) {
+												setUrl(
+													'https://auto-generate.vercel.app',
+												);
+												window.location.href =
+													'https://auto-generate.vercel.app';
+											} else {
+												console.log('Erro');
+											}
+										});
+									// localStorage.setItem('dataCompany', name);
+									// localStorage.setItem(
+									// 	'dataCompany',
+									// 	socialReason,
+									// );
+									// localStorage.setItem(
+									// 	'dataCompany',
+									// 	address,
+									// );
+									// localStorage.setItem(
+									// 	'dataCompany',
+									// 	zipCode,
+									// );
+									// localStorage.setItem('dataCompany', cnpj);
+									// localStorage.setItem('dataCompany', number);
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	nameClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	cpfClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	addressClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	districtClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	zipCodeClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	ufClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	cityClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	municipalRegistrationClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataClient',
+									// 	phoneClient,
+									// );
+									// localStorage.setItem(
+									// 	'dataInfo',
+									// 	JSON.stringify(item),
+									// );
+									// localStorage.setItem('dataInfo', text);
+									// localStorage.setItem(
+									// 	'dataInfo',
+									// 	addressInfo,
+									// );
+									// localStorage.setItem(
+									// 	'dataInfo',
+									// 	JSON.stringify(valueInfo),
+									// );
+									// localStorage.setItem(
+									// 	'dataPayment',
+									// 	JSON.stringify(valueInfo),
+									// );
+									// localStorage.setItem(
+									// 	'dataPayment',
+									// 	formOfPayment,
+									// );
+									// localStorage.setItem('dataPayment', value);
+									// localStorage.setItem(
+									// 	'dataPayment',
+									// 	maturity,
+									// );
+									// localStorage.setItem(
+									// 	'dataValueTotal',
+									// 	valueTotal,
+									// );
 								}}
 							>
 								Gerar mensalmente

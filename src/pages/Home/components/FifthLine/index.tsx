@@ -16,16 +16,24 @@ import { ModalClientFifthLine } from './ModalClient';
 interface DisabledButton {
 	disabledFifthLine: boolean;
 	setDisabledFifthLine: React.Dispatch<React.SetStateAction<boolean>>;
+	formOfPayment: string;
+	setFormOfPayment: React.Dispatch<React.SetStateAction<string>>;
+	value: string;
+	setValue: React.Dispatch<React.SetStateAction<string>>;
+	maturity: string;
+	setMaturity: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const FifthLine = ({
 	disabledFifthLine,
 	setDisabledFifthLine,
+	formOfPayment,
+	setFormOfPayment,
+	value,
+	setValue,
+	maturity,
+	setMaturity,
 }: DisabledButton) => {
-	const [formOfPayment, setFormOfPayment] = useState('');
-	const [value, setValue] = useState('');
-	const [maturity, setMaturity] = useState('');
-
 	const theme = useTheme();
 	const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -38,6 +46,12 @@ export const FifthLine = ({
 					<FifthLineSm
 						disabledFifthLine={disabledFifthLine}
 						setDisabledFifthLine={setDisabledFifthLine}
+						formOfPayment={formOfPayment}
+						setFormOfPayment={setFormOfPayment}
+						value={value}
+						setValue={setValue}
+						maturity={maturity}
+						setMaturity={setMaturity}
 					/>
 				</>
 			)) || (
