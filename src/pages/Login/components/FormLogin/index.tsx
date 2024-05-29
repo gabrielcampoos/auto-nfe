@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Link, TextField, Typography } from '@mui/material';
-import { ModalSignup } from '../ModalSignup';
+// import { ModalSignup } from '../ModalSignup';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../../store/hooks';
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { showNotification } from '../../../../store/modules/Notification/notific
 import { loginUser } from '../../../../store/modules/User/userSlice';
 
 export const FormLogin = () => {
-	const [isOpen, setIsOpen] = useState(false);
+	// const [isOpen, setIsOpen] = useState(false);
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -101,7 +101,7 @@ export const FormLogin = () => {
 				>
 					Acessar
 				</Button>
-				<Typography
+				{/* <Typography
 					variant="caption"
 					sx={{
 						fontSize: '15px',
@@ -121,9 +121,9 @@ export const FormLogin = () => {
 					>
 						Criar uma!
 					</Link>
-				</Typography>
+				</Typography> */}
 			</Box>
-			<ModalSignup open={isOpen} changeOpen={setIsOpen} />
+			{/* <ModalSignup open={isOpen} changeOpen={setIsOpen} /> */}
 		</Grid>
 	);
 };
