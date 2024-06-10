@@ -9,7 +9,6 @@ import {
 } from '../../../../store/modules/Loading/loadingSlice';
 import { showNotification } from '../../../../store/modules/Notification/notificationSlice';
 import { loginUser } from '../../../../store/modules/User/userSlice';
-import { ModalSignup } from '../ModalSignup';
 
 export const FormLogin = () => {
 	// const [isOpen, setIsOpen] = useState(false);
