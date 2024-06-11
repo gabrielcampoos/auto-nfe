@@ -98,7 +98,7 @@ export const ModalClientFourthLine = ({
 								margin="dense"
 								id="item"
 								name="item"
-								label="Código"
+								label="Quantidade"
 								type="number"
 								fullWidth
 								variant="filled"
@@ -140,7 +140,7 @@ export const ModalClientFourthLine = ({
 								margin="dense"
 								id="address"
 								name="address"
-								label="Quantidade / Valor Unitário"
+								label="Valor Unitário"
 								type="text"
 								fullWidth
 								variant="filled"
