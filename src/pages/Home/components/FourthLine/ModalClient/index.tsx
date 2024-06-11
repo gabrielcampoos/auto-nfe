@@ -20,8 +20,8 @@ interface ClientProps {
 	setText: React.Dispatch<React.SetStateAction<string>>;
 	address: string;
 	setAddress: React.Dispatch<React.SetStateAction<string>>;
-	value: number;
-	setValue: React.Dispatch<React.SetStateAction<number>>;
+	value: string;
+	setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ModalClientFourthLine = ({
@@ -159,9 +159,7 @@ export const ModalClientFourthLine = ({
 								type="number"
 								fullWidth
 								variant="filled"
-								onChange={(ev) =>
-									setValue(Number(ev.target.value))
-								}
+								onChange={(ev) => setValue(ev.target.value)}
 								value={value}
 								multiline
 								minRows={3}

@@ -276,7 +276,7 @@ export const SixthLine = ({
 										mb: 3,
 									}}
 								>
-									IDENTIFICAÇÃO E ASSINATURA DO RECEBIDOR
+									IDENTIFICAÇÃO E ASSINATURA DO RECEBEDOR
 								</Typography>
 							</Box>
 

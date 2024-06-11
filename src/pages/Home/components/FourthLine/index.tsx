@@ -22,8 +22,8 @@ interface DisabledButton {
 	setText: React.Dispatch<React.SetStateAction<string>>;
 	address: string;
 	setAddress: React.Dispatch<React.SetStateAction<string>>;
-	value: number;
-	setValue: React.Dispatch<React.SetStateAction<number>>;
+	value: string;
+	setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const FourthLine = ({
@@ -238,7 +238,7 @@ export const FourthLine = ({
 											textAlign: 'center',
 										}}
 									>
-										{address}
+										R$ {address}
 									</Typography>
 
 									<Typography
