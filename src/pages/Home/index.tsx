@@ -43,7 +43,7 @@ export const Nfe = () => {
 	const [item, setItem] = useState(0);
 	const [text, setText] = useState('');
 	const [addressInfo, setAddressInfo] = useState('');
-	const [valueInfo, setValueInfo] = useState(0);
+	const [valueInfo, setValueInfo] = useState('');
 
 	const [formOfPayment, setFormOfPayment] = useState('');
 	const [value, setValue] = useState('');
