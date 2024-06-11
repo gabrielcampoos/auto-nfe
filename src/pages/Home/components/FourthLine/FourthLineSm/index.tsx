@@ -98,7 +98,7 @@ export const FourthLineSm = ({
 								textAlign: 'center',
 							}}
 						>
-							Código
+							Quantidade
 						</Typography>
 
 						<Typography
@@ -126,7 +126,7 @@ export const FourthLineSm = ({
 								textAlign: 'center',
 							}}
 						>
-							Quantidade / Valor Unitário
+							Valor Unitário
 						</Typography>
 
 						<Typography

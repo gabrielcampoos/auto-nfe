@@ -132,7 +132,7 @@ export const FourthLine = ({
 										fontWeight: 700,
 									}}
 								>
-									Código
+									Quantidade
 								</Typography>
 
 								<Typography
@@ -164,7 +164,7 @@ export const FourthLine = ({
 										fontWeight: 700,
 									}}
 								>
-									Quantidade / Valor Unitário
+									Valor Unitário
 								</Typography>
 
 								<Typography
