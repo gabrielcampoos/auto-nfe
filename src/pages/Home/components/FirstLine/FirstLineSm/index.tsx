@@ -196,7 +196,7 @@ export const FirstLineSm = ({
 						</Typography>
 					</Box>
 				</Grid>
-				<Button
+				{/* <Button
 					disabled={disabledFirstLine}
 					sx={{
 						width: '50%',
@@ -213,7 +213,7 @@ export const FirstLineSm = ({
 					}}
 				>
 					add
-				</Button>
+				</Button> */}
 			</Grid>
 			<ModalClientFirstLine
 				name={name}
