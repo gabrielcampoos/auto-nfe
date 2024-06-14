@@ -59,7 +59,7 @@ export const Observation = ({
 								fontWeight: 700,
 							}}
 						>
-							OBSERVAÇÃO: {observation}
+							Informações complementares: {observation}
 						</Typography>
 					</Box>
 				</Grid>
