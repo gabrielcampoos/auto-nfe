@@ -8,6 +8,7 @@ import userSlice from './User/userSlice';
 import contextSliceFirstLine from './ContextModalFirstLine/contextSliceFirstLine';
 import contextSliceFifthLine from './ContextModalFifthLine/contextSliceFifthLine';
 import contextSliceSixthLine from './ContextModalSixthLine/contextSliceSixthLine';
+import contextObservationSlice from './ContextObservation/contextObservationSlice';
 
 const rootReducer = combineReducers({
 	// a cada novo slice, adicionamos uma nova propriedade neste objeto
@@ -22,6 +23,7 @@ const rootReducer = combineReducers({
 	contextFourthLine: contextSliceFourthLine,
 	contextFifthLine: contextSliceFifthLine,
 	contextSixthLine: contextSliceSixthLine,
+	contextObservation: contextObservationSlice,
 
 	// modal: modalTarefasSlice,
 });

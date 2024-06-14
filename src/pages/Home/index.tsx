@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getUser, updateCount } from '../../store/modules/User/userSlice';
 import serviceApi from '../../configs/services/api';
 import externalApi from '../../configs/services/external-api';
+import { Observation } from './components/Obeservation';
 
 export const Nfe = () => {
 	const theme = useTheme();
@@ -19,6 +20,7 @@ export const Nfe = () => {
 	const [disabledSecondLine, setDisabledSecondLine] = useState(false);
 	const [disabledFifthLine, setDisabledFifhtLine] = useState(false);
 	const [disabledSixthLine, setDisabledSixthLine] = useState(false);
+	const [disabledObservation, setDisabledObservation] = useState(false);
 	const [disabled, setDisabled] = useState(false);
 	const [widthPdf, setWidthPdf] = useState('100%');
 	const [count, setCount] = useState(0);
@@ -48,6 +50,8 @@ export const Nfe = () => {
 	const [formOfPayment, setFormOfPayment] = useState('');
 	const [value, setValue] = useState('');
 	const [maturity, setMaturity] = useState('');
+
+	const [observation, setObservation] = useState('');
 
 	const [valueTotal, setValueTotal] = useState('');
 
@@ -343,6 +347,14 @@ export const Nfe = () => {
 								value={valueInfo}
 								setValue={setValueInfo}
 							/>
+
+							<Observation
+								disabled={disabledObservation}
+								setDisabled={setDisabledObservation}
+								observation={observation}
+								setObservation={setObservation}
+							/>
+
 							<FifthLine
 								disabledFifthLine={disabledFifthLine}
 								setDisabledFifthLine={setDisabledFifhtLine}

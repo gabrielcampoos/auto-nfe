@@ -23,4 +23,9 @@ export interface ContextStateSixthLine {
 	context: 'createSixthLine' | 'editSixthLine' | 'deleteSixthLine';
 }
 
+export interface ContextObservation {
+	isOpen: boolean;
+	context: 'createObservation' | 'editObservation' | 'deleteObservation';
+}
+
 export default ContextStateSecondLine;
